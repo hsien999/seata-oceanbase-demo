@@ -1,0 +1,17 @@
+server:
+  port: 8761
+  tomcat.uri-encoding: utf-8
+
+spring:
+  application:
+    name: eureka
+
+eureka:
+  instance:
+    hostname: eureka
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/

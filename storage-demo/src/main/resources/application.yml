@@ -1,0 +1,41 @@
+server:
+  port: 8082
+  tomcat.uri-encoding: utf-8
+
+spring:
+  application:
+    name: storage
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    jdbc-url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: test
+    password: test123456
+    #    driver-class-name: com.alipay.oceanbase.jdbc.Driver
+    #    jdbc-url: jdbc:oceanbase:oracle://localhost:2881
+    #    username: root@sys
+    druid:
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+
+seata:
+  application-id: ${spring.application.name}
+  registry:
+    type: eureka
+    eureka:
+      service-url: http://localhost:8761/eureka/
+      weight: 1
+  config:
+    type: file
+  service:
+    vgroup-mapping:
+      default_tx_group: default
+
+eureka:
+  instance:
+    hostname: storage
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
