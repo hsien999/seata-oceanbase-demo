@@ -2,8 +2,6 @@ package io.seata.demo.order.dao;
 
 import io.seata.demo.order.entity.Orders;
 
-import java.util.List;
-
 public interface OrderMapper {
     void insert(Orders order);
 

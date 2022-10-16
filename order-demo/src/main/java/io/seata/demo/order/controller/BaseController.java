@@ -1,10 +1,8 @@
 package io.seata.demo.order.controller;
 
 
-import com.sun.istack.internal.NotNull;
 import io.seata.demo.order.entity.Orders;
 import io.seata.demo.order.service.OrderService;
-import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,13 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public abstract class BaseController {
-    protected abstract @NotNull OrderService getOrderService();
+    protected abstract OrderService getOrderService();
 
     @PostMapping("/insert/success")
     public String insertOrderSuccess(@RequestBody Orders orders) {
         try {
             getOrderService().insertSuccess(orders);
         } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
         return "success";
@@ -29,6 +28,7 @@ public abstract class BaseController {
         try {
             getOrderService().insertFail(orders);
         } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
         return "success";
@@ -39,6 +39,7 @@ public abstract class BaseController {
         try {
             getOrderService().updateSuccess(orders);
         } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
         return "success";
@@ -49,6 +50,7 @@ public abstract class BaseController {
         try {
             getOrderService().updateFail(orders);
         } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
         return "success";
@@ -59,6 +61,7 @@ public abstract class BaseController {
         try {
             getOrderService().deleteSuccess(orders);
         } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
         return "success";
@@ -69,6 +72,7 @@ public abstract class BaseController {
         try {
             getOrderService().deleteFail(orders);
         } catch (Exception e) {
+            e.printStackTrace();
             return "error";
         }
         return "success";

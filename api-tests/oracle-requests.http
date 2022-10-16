@@ -1,0 +1,72 @@
+POST http://localhost:8081/oracle/insert/success
+Content-Type: application/json
+
+{
+  "id": 1,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 10
+}
+
+
+###
+POST http://localhost:8081/oracle/insert/fail
+Content-Type: application/json
+
+{
+  "id": 2,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 10
+}
+
+
+###
+POST http://localhost:8081/oracle/update/success
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 2,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 20
+}
+
+
+###
+POST http://localhost:8081/oracle/update/fail
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 2,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 20
+}
+
+
+###
+POST http://localhost:8081/oracle/delete/success
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 2,
+  "storageId": 1,
+  "productId": "product-1"
+}
+
+
+###
+POST http://localhost:8081/oracle/delete/fail
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 2,
+  "storageId": 1,
+  "productId": "product-1"
+}
+

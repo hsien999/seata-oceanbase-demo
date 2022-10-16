@@ -46,6 +46,8 @@
         <jersey.apache.client>1.19.4</jersey.apache.client>
 
         <oracle.jdbc.version>12.2.0.1</oracle.jdbc.version>
+        <!--        <oceanabase.jdbc.version>1.1.5</oceanabase.jdbc.version>-->
+        <oceanabase.jdbc.version>2.2.7.2</oceanabase.jdbc.version>
     </properties>
 
     <dependencies>
@@ -136,13 +138,21 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.spring.boot.version}</version>
             </dependency>
-            <!-- oracle jdbc driver -->
+            <!-- jdbc drivers -->
             <dependency>
                 <groupId>com.oracle</groupId>
                 <artifactId>ojdbc8</artifactId>
                 <version>${oracle.jdbc.version}</version>
                 <scope>system</scope>
                 <systemPath>D:/summercode/seata-oceanbase-demo/lib/ojdbc8.jar</systemPath>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay</groupId>
+                <artifactId>oceanabase</artifactId>
+                <version>${oceanabase.jdbc.version}</version>
+                <scope>system</scope>
+                <systemPath>D:/summercode/seata-oceanbase-demo/lib/oceanbase-client-${oceanabase.jdbc.version}.jar
+                </systemPath>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -153,8 +163,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.maven.plugin.version}</version>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>

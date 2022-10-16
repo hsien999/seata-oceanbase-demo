@@ -1,0 +1,71 @@
+POST http://localhost:8081/mysql/insert/success
+Content-Type: application/json
+
+{
+  "id": 1,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 10
+}
+
+
+###
+POST http://localhost:8081/mysql/insert/fail
+Content-Type: application/json
+
+{
+  "id": 2,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 10
+}
+
+
+###
+POST http://localhost:8081/mysql/update/success
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 1,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 20
+}
+
+
+###
+POST http://localhost:8081/mysql/update/fail
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 1,
+  "storageId": 1,
+  "productId": "product-1",
+  "count": 20
+}
+
+
+###
+POST http://localhost:8081/mysql/delete/success
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 1,
+  "storageId": 1,
+  "productId": "product-1"
+}
+
+
+###
+POST http://localhost:8081/mysql/delete/fail
+Content-Type: application/json
+
+{
+  "id": 1,
+  "autoId": 1,
+  "storageId": 1,
+  "productId": "product-1"
+}

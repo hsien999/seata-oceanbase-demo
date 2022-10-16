@@ -1,6 +1,5 @@
 package io.seata.demo.order.service;
 
-import com.sun.istack.internal.NotNull;
 import io.seata.demo.order.dao.OrderMapper;
 import io.seata.demo.order.entity.Orders;
 import io.seata.demo.order.feign.StorageFeignClient;
@@ -8,9 +7,9 @@ import io.seata.spring.annotation.GlobalTransactional;
 
 public abstract class OrderService {
 
-    protected abstract @NotNull OrderMapper getOrderMapper();
+    protected abstract OrderMapper getOrderMapper();
 
-    protected abstract @NotNull StorageFeignClient getStorageFeignClient();
+    protected abstract StorageFeignClient getStorageFeignClient();
 
     @GlobalTransactional
     public void insertSuccess(Orders order) {

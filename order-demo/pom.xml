@@ -53,5 +53,9 @@
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc8</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alipay</groupId>
+            <artifactId>oceanabase</artifactId>
+        </dependency>
     </dependencies>
 </project>
