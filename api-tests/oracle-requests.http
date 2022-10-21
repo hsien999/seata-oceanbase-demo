@@ -40,7 +40,7 @@ Content-Type: application/json
 
 {
   "id": 1,
-  "autoId": 2,
+  "autoId": 5,
   "storageId": 1,
   "productId": "product-1",
   "count": 20

@@ -43,7 +43,7 @@ Content-Type: application/json
   "autoId": 1,
   "storageId": 1,
   "productId": "product-1",
-  "count": 20
+  "count": 30
 }
 
 

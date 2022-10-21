@@ -15,10 +15,6 @@ spring:
     url: jdbc:oceanbase://localhost:2881/test
     username: root
     password: root123456
-    druid:
-      initialSize: 5
-      minIdle: 5
-      maxActive: 20
 
 seata:
   application-id: ${spring.application.name}
@@ -40,3 +36,14 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+logging:
+  level:
+    io:
+      seata: info
